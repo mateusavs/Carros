@@ -1,10 +1,12 @@
-package com.example.logonrm.carros
+package com.example.logonrm.carros.ui.splash
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.animation.AnimationUtils
+import com.example.logonrm.carros.ui.main.MainActivity
+import com.example.logonrm.carros.R
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
