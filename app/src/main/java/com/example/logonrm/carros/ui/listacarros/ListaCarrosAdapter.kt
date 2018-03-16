@@ -33,7 +33,7 @@ class ListaCarrosAdapter(private val carros: List<Carro>,
         fun bindView(carro: Carro){
             itemView.tvMarca.text = carro.marca
             itemView.tvModelo.text = carro.modelo
-            Picasso.get().load(carro.urlImagem).placeholder(R.drawable.'').error(R.drawable.errou).into(itemView.ivFoto)
+            Picasso.get().load(carro.urlImagem).placeholder(R.drawable.loading).error(R.drawable.errou).into(itemView.ivFoto)
         }
     }
 }
