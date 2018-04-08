@@ -38,12 +38,11 @@ class NovoCarroFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         btSalvar.setOnClickListener {
             val api = RetrofitClient.getInstance().create(CarroAPI::class.java)
-            val carro = Carro(null,
+            val carro = Carro(inputPlaca.editText?.text.toString(),
                     inputMarca.editText?.text.toString(),
                     inputModelo.editText?.text.toString(),
                     inputAno.editText?.text.toString().toInt(),
-                    inputPlaca.editText?.text.toString(),
-                    "")
+                    inputCor.editText?.text.toString())
 
             api.salvar(carro).enqueue(object : Callback<Void>{
                 override fun onResponse(call: Call<Void>?, response: Response<Void>?) {
@@ -62,10 +61,12 @@ class NovoCarroFragment : Fragment() {
         }
     }
     private fun limparCampos(){
+        inputPlaca.editText?.setText("")
         inputMarca.editText?.setText("")
         inputModelo.editText?.setText("")
         inputAno.editText?.setText("")
-        inputPlaca.editText?.setText("")
+        inputCor.editText?.setText("")
+
     }
 }
 
