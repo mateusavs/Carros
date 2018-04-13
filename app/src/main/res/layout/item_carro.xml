@@ -7,28 +7,40 @@
 
 
     <TextView
+        android:textColor="#000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvPlaca"
         tools:text="Placa:  "/>
     <TextView
+        android:textColor="#000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvMarca"
         tools:text="Marca:  "/>
     <TextView
+        android:textColor="#000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvModelo"
         tools:text="Modelo:  "/>
     <TextView
+        android:textColor="#000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvAno"
+        tools:text="Ano:  "/>
+    <TextView
+        android:textColor="#000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvCor"
         tools:text="Cor:  "/>
     <TextView
+        android:textColor="#000"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tvLinha"/>
+        android:id="@+id/tvLinha"
+        tools:text="____________________________________"/>
 
 </LinearLayout>

@@ -8,10 +8,14 @@
     tools:context="com.example.logonrm.carros.ui.main.MainActivity">
 
     <FrameLayout
+        android:id="@+id/containerFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/containerFragment"
-        android:layout_above="@+id/navigation"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:layout_alignParentLeft="true" />
+
 
     <android.support.design.widget.BottomNavigationView
         android:layout_alignParentBottom="true"

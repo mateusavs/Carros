@@ -8,18 +8,26 @@ import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
 import android.provider.ContactsContract
-import android.text.TextUtils
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.TextView
 
 import java.util.ArrayList
 import android.content.Intent
+import android.text.TextUtils
+import android.util.Log
+import android.widget.Toast
 import com.example.logonrm.carros.R
+import com.example.logonrm.carros.api.CarroAPI
+import com.example.logonrm.carros.api.RetrofitClient
+import com.example.logonrm.carros.model.Users
 import com.example.logonrm.carros.ui.main.MainActivity
 import com.example.logonrm.carros.ui.novouser.NovoUserActivity
 
 import kotlinx.android.synthetic.main.activity_login.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
 
@@ -34,7 +42,7 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
             false
         })
 
-        btn_entrar.setOnClickListener { attemptLogin() }
+        btn_login.setOnClickListener { attemptLogin() }
         btn_cadastrar.setOnClickListener { attempCadastrar() }
         btn_sair.setOnClickListener { attempSair() }
     }
@@ -62,20 +70,46 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
             cancel = true
         }
 
-        if (cancel == false){
-        startActivity(Intent(this, MainActivity::class.java))
+        val api = RetrofitClient.getInstance().create(CarroAPI::class.java)
+
+        api.buscarUser(userStr).enqueue(object : Callback<Users>{
+            override fun onResponse(call: Call<Users>?, response: Response<Users>?) {
+                response?.body()?.let {
+                    val users: Users = it
+
+                    if (response?.isSuccessful == true) {
+                        if (users.user == userStr && users.password == passwordStr) {
+                            cancel = false
+                        }
+                    } else {
+                        /* Toast.makeText(applicationContext, "Erro", Toast.LENGTH_SHORT).show()*/
+                        cancel = true
+                    }
+
+                }
+
+            }
+            override fun onFailure(call: Call<Users>?, t: Throwable?) {
+                Log.e("USERS", t?.message)
+            }
+        })
+
+        if (cancel == false) {
+
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
+
 
     private fun isPasswordValid(password: String): Boolean {
         return password.length > 4
     }
 
-    private fun attempCadastrar (){
+    private fun attempCadastrar() {
         startActivity(Intent(this, NovoUserActivity::class.java))
     }
 
-    private fun attempSair (){
+    private fun attempSair() {
         finish()
         System.exit(0)
     }

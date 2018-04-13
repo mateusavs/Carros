@@ -64,12 +64,13 @@
             </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:id="@+id/btn_entrar"
+                android:id="@+id/btn_login"
                 style="?android:textAppearanceSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="12dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="32dp"
                 android:text="Sign In"
                 android:textStyle="bold" />
 
@@ -78,20 +79,21 @@
                 style="?android:textAppearanceSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="12dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginLeft="105dp"
+                android:layout_marginTop="-55dp"
                 android:text="Create account"
                 android:textStyle="bold" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/btn_sair"
-                style="?android:textAppearanceSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="12dp"
-                android:layout_marginTop="16dp"
-                android:text="Exit"
-                android:textStyle="bold" />
+                android:layout_marginLeft="263dp"
+                android:layout_marginTop="-48dp"
+                android:paddingBottom="6dp"
+                android:paddingTop="6dp"
+
+                android:src="@drawable/ic_power_settings_new_black_24dp" />
         </LinearLayout>
 
 

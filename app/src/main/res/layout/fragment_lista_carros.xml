@@ -4,12 +4,36 @@
     android:layout_height="match_parent"
     tools:context="com.example.logonrm.carros.ui.listacarros.ListaCarrosFragment">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvCarros"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-    <include layout="@layout/loading"/>
-    <include layout="@layout/erro"/>
+    <Button
+        android:id="@+id/btn_cadastrarCar"
+        style="?android:textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="150dp"
+        android:text="New Car"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_findAll"
+        style="?android:textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="82dp"
+        android:text="Find All Cars"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_findCarByPlaca"
+        style="?android:textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="13dp"
+        android:text="Find Car By Placa"
+        android:textStyle="bold" />
+
 
 
 </FrameLayout>

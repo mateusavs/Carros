@@ -34,6 +34,10 @@
         <activity
             android:name=".ui.novouser.NovoUserActivity"
             android:label="@string/title_activity_novo_user" />
+        <activity android:name=".ui.novocarro.NovoCarroActivity" />
+        <activity android:name=".ui.listacarros.ListaCarroActivity" />
+        <activity android:name=".ui.findplaca.FindByPlacaActivity" />
+        <activity android:name=".ui.findplaca.FindByPlacaEditActivity"></activity>
     </application>
 
 </manifest>

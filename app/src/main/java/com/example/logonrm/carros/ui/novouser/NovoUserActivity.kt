@@ -11,6 +11,7 @@ import com.example.logonrm.carros.R
 import com.example.logonrm.carros.api.CarroAPI
 import com.example.logonrm.carros.api.RetrofitClient
 import com.example.logonrm.carros.model.Users
+import com.example.logonrm.carros.ui.Login.LoginActivity
 import com.example.logonrm.carros.ui.main.MainActivity
 import kotlinx.android.synthetic.main.activity_novo_user.*
 import retrofit2.Call
@@ -53,7 +54,7 @@ class NovoUserActivity : AppCompatActivity() {
         inputPassword.editText?.setText("")
         inputMail.editText?.setText("")
         inputName.editText?.setText("")
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this, LoginActivity::class.java))
     }
 }
 

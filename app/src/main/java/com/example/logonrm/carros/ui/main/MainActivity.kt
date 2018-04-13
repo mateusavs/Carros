@@ -4,10 +4,9 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
-import android.widget.Toast
 import com.example.logonrm.carros.R
 import com.example.logonrm.carros.ui.listacarros.ListaCarrosFragment
-import com.example.logonrm.carros.ui.novocarro.NovoCarroFragment
+import com.example.logonrm.carros.ui.sobre.SobreFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -18,12 +17,14 @@ class MainActivity : AppCompatActivity() {
                 changeFragment(ListaCarrosFragment())
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_novo -> {
-                changeFragment(NovoCarroFragment())
+            R.id.navigation_sobre -> {
+                changeFragment(SobreFragment())
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_sobre -> {
-                Toast.makeText(this, "Em Construção", Toast.LENGTH_LONG).show()
+            R.id.navigation_exit -> {
+                finish()
+                finishAffinity()
+                System.exit(0)
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -40,7 +41,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
+
 }
