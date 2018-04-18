@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.example.logonrm.carros.R
+import com.example.logonrm.carros.ui.deleteplaca.DeleteByPlacaActivity
 import com.example.logonrm.carros.ui.findplaca.FindByPlacaActivity
 import com.example.logonrm.carros.ui.novocarro.NovoCarroActivity
 import kotlinx.android.synthetic.main.fragment_lista_carros.*
@@ -26,6 +27,7 @@ class ListaCarrosFragment : Fragment() {
         btn_findAll.setOnClickListener { attempFindAll() }
         btn_findCarByPlaca.setOnClickListener { attempFindPlaca() }
         btn_cadastrarCar.setOnClickListener { attempCadastrarCar() }
+        btn_deletarCar.setOnClickListener { attempDeletarCar() }
     }
 
     private fun attempFindAll(){
@@ -40,6 +42,11 @@ class ListaCarrosFragment : Fragment() {
 
     private fun attempCadastrarCar(){
         val intent: Intent = Intent(activity, NovoCarroActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun attempDeletarCar(){
+        val intent: Intent = Intent(activity, DeleteByPlacaActivity::class.java)
         startActivity(intent)
     }
 }

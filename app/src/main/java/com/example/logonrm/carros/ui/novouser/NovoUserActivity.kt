@@ -36,7 +36,7 @@ class NovoUserActivity : AppCompatActivity() {
             api.salvarUser(user).enqueue(object : Callback<Void> {
                 override fun onResponse(call: Call<Void>?, response: Response<Void>?) {
                     if (response?.isSuccessful == true) {
-                        Toast.makeText(applicationContext, "Sucesso", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext, "Created Successfully", Toast.LENGTH_SHORT).show()
                         limparCampos()
                     } else {
                         Toast.makeText(applicationContext, "Erro", Toast.LENGTH_SHORT).show()

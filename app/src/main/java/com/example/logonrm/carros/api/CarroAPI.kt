@@ -18,7 +18,7 @@ interface CarroAPI{
     fun salvar(@Body carro: Carro): Call<Void>
 
     @DELETE("/carro/delete/{placa}")
-    fun deletar(@Path("placa") placa: String): Call<Carro>
+    fun deletar(@Path("placa") placa: String): Call<Void>
 
 /*-----------------------------------------------------------*/
 

@@ -58,11 +58,6 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
         var cancel = false
         var focusView: View? = null
 
-        if (!TextUtils.isEmpty(passwordStr) && !isPasswordValid(passwordStr)) {
-            password.error = getString(R.string.error_invalid_password)
-            focusView = password
-            cancel = true
-        }
 
         if (TextUtils.isEmpty(userStr)) {
             user.error = getString(R.string.error_field_required)
@@ -74,35 +69,36 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
 
         api.buscarUser(userStr).enqueue(object : Callback<Users>{
             override fun onResponse(call: Call<Users>?, response: Response<Users>?) {
-                response?.body()?.let {
-                    val users: Users = it
-
                     if (response?.isSuccessful == true) {
-                        if (users.user == userStr && users.password == passwordStr) {
-                            cancel = false
-                        }
-                    } else {
-                        /* Toast.makeText(applicationContext, "Erro", Toast.LENGTH_SHORT).show()*/
+                        setupLista(response?.body()!!)
+                    }
+                     else {
+                        Toast.makeText(applicationContext, "User Not Exist", Toast.LENGTH_SHORT).show()
                         cancel = true
                     }
-
                 }
-
-            }
             override fun onFailure(call: Call<Users>?, t: Throwable?) {
                 Log.e("USERS", t?.message)
             }
         })
 
-        if (cancel == false) {
-
-            startActivity(Intent(this, MainActivity::class.java))
-        }
     }
 
-
-    private fun isPasswordValid(password: String): Boolean {
-        return password.length > 4
+    fun setupLista(users:Users){
+        users.let {
+            users.user
+            users.password
+            var cancel = true
+            if (user.text.toString() == users.user && password.text.toString() == users.password){
+                cancel = false
+            }
+            if (cancel == false) {
+                Toast.makeText(applicationContext, "Successfully Logged In", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, MainActivity::class.java))
+            }else{
+                Toast.makeText(applicationContext, "Invalid User or Password", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     private fun attempCadastrar() {
@@ -114,30 +110,22 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
         System.exit(0)
     }
 
+
+
+
+
+
     override fun onCreateLoader(i: Int, bundle: Bundle?): Loader<Cursor> {
         return CursorLoader(this,
-                // Retrieve data rows for the device user's 'profile' contact.
                 Uri.withAppendedPath(ContactsContract.Profile.CONTENT_URI,
                         ContactsContract.Contacts.Data.CONTENT_DIRECTORY), LoginActivity.ProfileQuery.PROJECTION,
-
-                // Select only email addresses.
                 ContactsContract.Contacts.Data.MIMETYPE + " = ?", arrayOf(ContactsContract.CommonDataKinds.Email
                 .CONTENT_ITEM_TYPE),
-
-                // Show primary email addresses first. Note that there won't be
-                // a primary email address if the user hasn't specified one.
                 ContactsContract.Contacts.Data.IS_PRIMARY + " DESC")
     }
+    override fun onLoadFinished(loader: Loader<Cursor>?, data: Cursor?) {
 
-    override fun onLoadFinished(cursorLoader: Loader<Cursor>, cursor: Cursor) {
-        val emails = ArrayList<String>()
-        cursor.moveToFirst()
-        while (!cursor.isAfterLast) {
-            emails.add(cursor.getString(LoginActivity.ProfileQuery.ADDRESS))
-            cursor.moveToNext()
-        }
     }
-
     override fun onLoaderReset(cursorLoader: Loader<Cursor>) {
 
     }

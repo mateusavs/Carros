@@ -37,7 +37,8 @@
         <activity android:name=".ui.novocarro.NovoCarroActivity" />
         <activity android:name=".ui.listacarros.ListaCarroActivity" />
         <activity android:name=".ui.findplaca.FindByPlacaActivity" />
-        <activity android:name=".ui.findplaca.FindByPlacaEditActivity"></activity>
+        <activity android:name=".ui.findplaca.FindByPlacaEditActivity" />
+        <activity android:name=".ui.deleteplaca.DeleteByPlacaActivity"></activity>
     </application>
 
 </manifest>

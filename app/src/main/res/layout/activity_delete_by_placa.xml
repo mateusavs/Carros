@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.deleteplaca.DeleteByPlacaActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:text="Pleasy, Inform Car Plate"
+        android:textSize="25sp"
+        android:textStyle="bold|italic" />
+
+    <EditText
+        android:id="@+id/placaCar"
+        android:layout_width="187dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:hint="Car Plate" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btDeletarPlaca"
+            android:layout_width="166dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center"
+            android:layout_marginBottom="350dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="0dp"
+            android:src="@android:drawable/ic_delete"
+            app:layout_anchorGravity="bottom|right|end" />
+</android.support.design.widget.CoordinatorLayout>

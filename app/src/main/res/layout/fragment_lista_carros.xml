@@ -34,6 +34,16 @@
         android:text="Find Car By Placa"
         android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/btn_deletarCar"
+        style="?android:textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="220dp"
+        android:text="Delete Car By Placa"
+        android:textStyle="bold" />
+
 
 
 </FrameLayout>
