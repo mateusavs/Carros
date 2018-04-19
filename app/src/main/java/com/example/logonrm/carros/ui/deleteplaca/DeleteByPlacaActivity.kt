@@ -7,7 +7,6 @@ import android.widget.Toast
 import com.example.logonrm.carros.R
 import com.example.logonrm.carros.api.CarroAPI
 import com.example.logonrm.carros.api.RetrofitClient
-import com.example.logonrm.carros.model.Carro
 import kotlinx.android.synthetic.main.activity_delete_by_placa.*
 import retrofit2.Call
 import retrofit2.Callback

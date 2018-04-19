@@ -12,7 +12,6 @@ import com.example.logonrm.carros.api.CarroAPI
 import com.example.logonrm.carros.api.RetrofitClient
 import com.example.logonrm.carros.model.Users
 import com.example.logonrm.carros.ui.Login.LoginActivity
-import com.example.logonrm.carros.ui.main.MainActivity
 import kotlinx.android.synthetic.main.activity_novo_user.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -30,8 +29,8 @@ class NovoUserActivity : AppCompatActivity() {
             val api = RetrofitClient.getInstance().create(CarroAPI::class.java)
             val user = Users(inputUser.editText?.text.toString(),
                     inputPassword.editText?.text.toString(),
-                    inputMail.editText?.text.toString(),
-                    inputName.editText?.text.toString())
+                    inputName.editText?.text.toString(),
+                    inputMail.editText?.text.toString())
 
             api.salvarUser(user).enqueue(object : Callback<Void> {
                 override fun onResponse(call: Call<Void>?, response: Response<Void>?) {

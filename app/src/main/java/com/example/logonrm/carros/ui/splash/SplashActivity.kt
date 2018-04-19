@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.animation.AnimationUtils
-import com.example.logonrm.carros.ui.main.MainActivity
 import com.example.logonrm.carros.R
 import com.example.logonrm.carros.ui.Login.LoginActivity
 import kotlinx.android.synthetic.main.activity_splash.*

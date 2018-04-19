@@ -1,16 +1,13 @@
 package com.example.logonrm.carros.ui.novocarro
 
-import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils
 import android.util.Log
 import android.widget.Toast
 import com.example.logonrm.carros.R
 import com.example.logonrm.carros.api.CarroAPI
 import com.example.logonrm.carros.api.RetrofitClient
 import com.example.logonrm.carros.model.Carro
-import com.example.logonrm.carros.ui.main.MainActivity
 import kotlinx.android.synthetic.main.activity_novo_carro.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -47,6 +44,7 @@ class NovoCarroActivity : AppCompatActivity() {
             }
         })
     }
+
 
     fun excluir() {
         val api = RetrofitClient.getInstance().create(CarroAPI::class.java)
