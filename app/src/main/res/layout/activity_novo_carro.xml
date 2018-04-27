@@ -20,7 +20,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="90dp"
                 android:layout_marginRight="0dp"
-                android:text="Create a New Car"
+                android:text="@string/new_car"
                 android:textSize="25sp"
                 android:textStyle="bold|italic" />
             <android.support.design.widget.TextInputLayout
@@ -31,7 +31,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Car Plate" />
+                    android:hint="@string/placa" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -42,7 +42,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Car Brand" />
+                    android:hint="@string/marca"/>
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -53,7 +53,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Car Model" />
+                    android:hint="@string/modelo" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -64,7 +64,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Car Year"
+                    android:hint="@string/ano"
                     android:inputType="number" />
             </android.support.design.widget.TextInputLayout>
 
@@ -76,7 +76,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Car Color" />
+                    android:hint="@string/cor" />
             </android.support.design.widget.TextInputLayout>
         </LinearLayout>
 
@@ -90,14 +90,5 @@
         android:layout_margin="16dp"
         android:src="@android:drawable/ic_menu_add"
         app:layout_anchorGravity="bottom|right|end" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/btExcluir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:layout_margin="16dp"
-        android:src="@android:drawable/ic_menu_delete"
-        app:layout_anchorGravity="bottom|right|end"/>
 
 </android.support.design.widget.CoordinatorLayout>

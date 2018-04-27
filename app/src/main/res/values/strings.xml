@@ -1,26 +1,60 @@
 <resources>
 
-    <string name="app_name">Carros</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">Cars</string>
+    <string name="title_activity_main">Cars</string>
+    <string name="title_home">Cars</string>
+    <string name="title_about">About</string>
+    <string name="title_exit">Exit</string>
     <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_novo_user">New User</string>
+    <string name="title_activity_novo_carro">New Car</string>
+    <string name="title_activity_delete_carro">Delete Car</string>
+    <string name="title_activity_lista_carro">List Cars</string>
+    <string name="title_activity_find_carro">Find Car</string>
+    <string name="title_activity_edit_carro">Car</string>
 
     <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password (optional)</string>
-    <string name="action_sign_in">Sign in or register</string>
+    <string name="user">User</string>
+    <string name="password">Password</string>
+    <string name="action_register">Create account</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_user">User Not Exist</string>
+    <string name="error_invalid">Invalid User or Password</string>
     <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
-    <string name="title_activity_novo_user">NovoUserActivity</string>
+    <string name="logado">Successfully Logged In</string>
+
+    <string name="insert_sucess">Created Successfully</string>
+    <string name="delete_sucess">Deleted Successfully</string>
+    <string name="change_sucess">Changed Successfully</string>
+    <string name="error">Error</string>
+    <string name="error_campos">Fill in All Fields</string>
+
+    <string name="find_all">Find All Cars</string>
+    <string name="find_car">Find Car By Plate</string>
+    <string name="delete_car">Delete Car By Plate</string>
+
+    <string name="informar_placa">Pleasy, Inform Car Plate</string>
+
+    <string name="error_car">Not Exist car With Plate</string>
+    <string name="new_car">New Car</string>
+    <string name="placa">Plate</string>
+    <string name="marca">Brand</string>
+    <string name="modelo">Model</string>
+    <string name="ano">Year</string>
+    <string name="cor">Color</string>
+
+    <string name="placa_list">Plate: </string>
+    <string name="marca_list">Brand: </string>
+    <string name="modelo_list">Model: </string>
+    <string name="ano_list">Year: </string>
+    <string name="cor_list">Color: </string>
+
+    <string name="loading">Loading ...</string>
+
+    <string name="mail">Email</string>
+    <string name="name">Full Name</string>
+
+
+    <string name="desenvolvido">Developed by: Mateus Santos</string>
+    <string name="versao">Version 1.0</string>
 </resources>

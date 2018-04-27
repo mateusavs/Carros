@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="150dp"
-        android:text="New Car"
+        android:text="@string/new_car"
         android:textStyle="bold" />
 
     <Button
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="82dp"
-        android:text="Find All Cars"
+        android:text="@string/find_all"
         android:textStyle="bold" />
 
     <Button
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="13dp"
-        android:text="Find Car By Placa"
+        android:text="@string/find_car"
         android:textStyle="bold" />
 
     <Button
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="220dp"
-        android:text="Delete Car By Placa"
+        android:text="@string/delete_car"
         android:textStyle="bold" />
 
 

@@ -13,7 +13,6 @@ import android.view.inputmethod.EditorInfo
 import android.widget.TextView
 
 import android.content.Intent
-import android.text.TextUtils
 import android.util.Log
 import android.widget.Toast
 import com.example.logonrm.carros.R
@@ -48,38 +47,42 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
 
     private fun attemptLogin() {
 
-        user.error = null
-        password.error = null
 
         val userStr = user.text.toString()
-        val passwordStr = password.text.toString()
 
         var cancel = false
         var focusView: View? = null
 
 
-        if (TextUtils.isEmpty(userStr)) {
+        if (user.text.toString() == null || user.text.toString() == "") {
             user.error = getString(R.string.error_field_required)
-            focusView = user
             cancel = true
         }
 
-        val api = RetrofitClient.getInstance().create(CarroAPI::class.java)
+        if (password.text.toString() == null || password.text.toString() == "") {
+            password.error = getString(R.string.error_field_required)
+            cancel = true
+        }
 
-        api.buscarUser(userStr).enqueue(object : Callback<Users>{
-            override fun onResponse(call: Call<Users>?, response: Response<Users>?) {
+        if (cancel == false) {
+
+            val api = RetrofitClient.getInstance().create(CarroAPI::class.java)
+
+            api.buscarUser(userStr).enqueue(object : Callback<Users> {
+                override fun onResponse(call: Call<Users>?, response: Response<Users>?) {
                     if (response?.isSuccessful == true) {
                         setupLista(response?.body()!!)
-                    }
-                     else {
-                        Toast.makeText(applicationContext, "User Not Exist", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(applicationContext, getString(R.string.error_user),Toast.LENGTH_SHORT).show()
                         cancel = true
                     }
                 }
-            override fun onFailure(call: Call<Users>?, t: Throwable?) {
-                Log.e("USERS", t?.message)
-            }
-        })
+
+                override fun onFailure(call: Call<Users>?, t: Throwable?) {
+                    Log.e("USERS", t?.message)
+                }
+            })
+        }
 
     }
 
@@ -92,10 +95,10 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
                 cancel = false
             }
             if (cancel == false) {
-                Toast.makeText(applicationContext, "Successfully Logged In", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, getString(R.string.logado), Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, MainActivity::class.java))
             }else{
-                Toast.makeText(applicationContext, "Invalid User or Password", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, getString(R.string.error_invalid), Toast.LENGTH_SHORT).show()
             }
         }
     }

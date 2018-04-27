@@ -42,10 +42,10 @@ class FindByPlacaEditActivity : AppCompatActivity() {
         api.deletar(inputPlaca.editText?.text.toString()).enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>?, response: Response<Void>?) {
                 if (response?.isSuccessful == true) {
-                    Toast.makeText(applicationContext, "Deleted Successfully", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, getString(R.string.delete_sucess), Toast.LENGTH_SHORT).show()
                     finish()
                 } else {
-                    Toast.makeText(applicationContext, "Erro", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, getString(R.string.error), Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -56,26 +56,52 @@ class FindByPlacaEditActivity : AppCompatActivity() {
     }
 
     private fun editar() {
-        val api = RetrofitClient.getInstance().create(CarroAPI::class.java)
-        val carro = Carro(inputPlaca.editText?.text.toString().toUpperCase(),
-                inputMarca.editText?.text.toString(),
-                inputModelo.editText?.text.toString(),
-                inputAno.editText?.text.toString().toInt(),
-                inputCor.editText?.text.toString())
+        var cancel = false
 
-        api.salvar(carro).enqueue(object : Callback<Void> {
-            override fun onResponse(call: Call<Void>?, response: Response<Void>?) {
-                if (response?.isSuccessful == true) {
-                    Toast.makeText(applicationContext, "Changed Successfully", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(applicationContext, "Error", Toast.LENGTH_SHORT).show()
+        if(inputPlaca.editText?.text.toString() == null || inputPlaca.editText?.text.toString() == ""){
+            cancel = true
+            Toast.makeText(applicationContext, getString(R.string.error_campos), Toast.LENGTH_SHORT).show()
+        }
+        if(inputMarca.editText?.text.toString() == null || inputMarca.editText?.text.toString() == ""){
+            cancel = true
+            Toast.makeText(applicationContext, getString(R.string.error_campos), Toast.LENGTH_SHORT).show()
+        }
+        if(inputModelo.editText?.text.toString() == null || inputModelo.editText?.text.toString() == ""){
+            cancel = true
+            Toast.makeText(applicationContext, getString(R.string.error_campos), Toast.LENGTH_SHORT).show()
+        }
+        if(inputAno.editText?.text.toString() == null || inputAno.editText?.text.toString() == ""){
+            cancel = true
+            Toast.makeText(applicationContext, getString(R.string.error_campos), Toast.LENGTH_SHORT).show()
+        }
+        if(inputCor.editText?.text.toString() == null || inputCor.editText?.text.toString() == ""){
+            cancel = true
+            Toast.makeText(applicationContext, getString(R.string.error_campos), Toast.LENGTH_SHORT).show()
+        }
+
+        if(cancel == false) {
+            val api = RetrofitClient.getInstance().create(CarroAPI::class.java)
+            val carro = Carro(inputPlaca.editText?.text.toString().toUpperCase(),
+                    inputMarca.editText?.text.toString(),
+                    inputModelo.editText?.text.toString(),
+                    inputAno.editText?.text.toString().toInt(),
+                    inputCor.editText?.text.toString())
+
+            api.salvar(carro).enqueue(object : Callback<Void> {
+                override fun onResponse(call: Call<Void>?, response: Response<Void>?) {
+                    if (response?.isSuccessful == true) {
+                        Toast.makeText(applicationContext, getString(R.string.change_sucess), Toast.LENGTH_SHORT).show()
+                        finish()
+                    } else {
+                        Toast.makeText(applicationContext, getString(R.string.error), Toast.LENGTH_SHORT).show()
+                    }
                 }
-            }
 
-            override fun onFailure(call: Call<Void>?, t: Throwable?) {
-                Log.e("CARRO", t?.message)
-            }
-        })
+                override fun onFailure(call: Call<Void>?, t: Throwable?) {
+                    Log.e("CARRO", t?.message)
+                }
+            })
+        }
     }
 
 }

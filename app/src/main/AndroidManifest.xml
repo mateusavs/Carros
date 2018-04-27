@@ -25,6 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".ui.main.MainActivity"
             android:label="@string/title_activity_main" />
@@ -34,11 +35,24 @@
         <activity
             android:name=".ui.novouser.NovoUserActivity"
             android:label="@string/title_activity_novo_user" />
-        <activity android:name=".ui.novocarro.NovoCarroActivity" />
-        <activity android:name=".ui.listacarros.ListaCarroActivity" />
-        <activity android:name=".ui.findplaca.FindByPlacaActivity" />
-        <activity android:name=".ui.findplaca.FindByPlacaEditActivity" />
-        <activity android:name=".ui.deleteplaca.DeleteByPlacaActivity"></activity>
+        <activity
+            android:name=".ui.novocarro.NovoCarroActivity"
+            android:label="@string/title_activity_novo_carro"/>
+
+        <activity
+            android:name=".ui.listacarros.ListaCarroActivity"
+            android:label="@string/title_activity_lista_carro"/>
+        <activity
+            android:name=".ui.findplaca.FindByPlacaActivity"
+            android:label="@string/title_activity_find_carro"
+            />
+        <activity
+            android:name=".ui.findplaca.FindByPlacaEditActivity"
+            android:label="@string/title_activity_edit_carro"/>
+        <activity
+            android:name=".ui.deleteplaca.DeleteByPlacaActivity"
+            android:label="@string/title_activity_delete_carro"
+            />
     </application>
 
 </manifest>

@@ -25,7 +25,28 @@ class NovoUserActivity : AppCompatActivity() {
         setContentView(R.layout.activity_novo_user)
         btSalvar.setOnClickListener { cadastrar() }
     }
+
     private fun cadastrar() {
+        var cancel = false
+
+        if (inputUser.editText?.text.toString() == null || inputUser.editText?.text.toString() == "") {
+            cancel = true
+            Toast.makeText(applicationContext, getString(R.string.error_campos), Toast.LENGTH_SHORT).show()
+        }
+        if (inputPassword.editText?.text.toString() == null || inputPassword.editText?.text.toString() == "") {
+            cancel = true
+            Toast.makeText(applicationContext, getString(R.string.error_campos), Toast.LENGTH_SHORT).show()
+        }
+        if (inputMail.editText?.text.toString() == null || inputMail.editText?.text.toString() == "") {
+            cancel = true
+            Toast.makeText(applicationContext, getString(R.string.error_campos), Toast.LENGTH_SHORT).show()
+        }
+        if (inputName.editText?.text.toString() == null || inputName.editText?.text.toString() == "") {
+            cancel = true
+            Toast.makeText(applicationContext, getString(R.string.error_campos), Toast.LENGTH_SHORT).show()
+        }
+
+        if (cancel == false) {
             val api = RetrofitClient.getInstance().create(CarroAPI::class.java)
             val user = Users(inputUser.editText?.text.toString(),
                     inputPassword.editText?.text.toString(),
@@ -35,10 +56,10 @@ class NovoUserActivity : AppCompatActivity() {
             api.salvarUser(user).enqueue(object : Callback<Void> {
                 override fun onResponse(call: Call<Void>?, response: Response<Void>?) {
                     if (response?.isSuccessful == true) {
-                        Toast.makeText(applicationContext, "Created Successfully", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext, getString(R.string.insert_sucess), Toast.LENGTH_SHORT).show()
                         limparCampos()
                     } else {
-                        Toast.makeText(applicationContext, "Erro", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext, getString(R.string.error), Toast.LENGTH_SHORT).show()
                     }
                 }
 
@@ -47,8 +68,9 @@ class NovoUserActivity : AppCompatActivity() {
                 }
             })
         }
+    }
 
-    private fun limparCampos(){
+    private fun limparCampos() {
         inputUser.editText?.setText("")
         inputPassword.editText?.setText("")
         inputMail.editText?.setText("")

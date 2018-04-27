@@ -30,11 +30,11 @@ class ListaCarrosAdapter(private val carros: List<Carro>,
 
     class MeuViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         fun bindView(carro: Carro){
-            itemView.tvPlaca.text = "Car Plate:  " + carro.placa
-            itemView.tvMarca.text = "Car Brand: " + carro.marca
-            itemView.tvModelo.text = "Car Model: " + carro.modelo
-            itemView.tvAno.text = "Car Year: " + carro.ano
-            itemView.tvCor.text = "Car Color:  " + carro.cor
+            itemView.tvPlaca.text =  carro.placa
+            itemView.tvMarca.text = carro.marca
+            itemView.tvModelo.text = carro.modelo
+            itemView.tvCor.text = carro.cor
+            itemView.tvAno.text = carro.ano.toString()
             itemView.tvLinha.text = "____________________________________"
 
         }

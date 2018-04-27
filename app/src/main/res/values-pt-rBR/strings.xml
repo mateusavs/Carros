@@ -1,4 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">Carros</string>
+    <string name="title_activity_main">Carros</string>
+    <string name="title_home">Carros</string>
+    <string name="title_about">Sobre</string>
+    <string name="title_exit">Sair</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_novo_user">Novo Usuário</string>
+    <string name="title_activity_novo_carro">Novo Carro</string>
+    <string name="title_activity_delete_carro">Deletar Carro</string>
+    <string name="title_activity_lista_carro">Lista de Carros</string>
+    <string name="title_activity_find_carro">Buscar Carro</string>
+    <string name="title_activity_edit_carro">Carro</string>
+
+    <string name="user">Usuário</string>
+    <string name="password">Senha</string>
+    <string name="action_register">Criar Conta</string>
+    <string name="action_sign_in_short">Entrar</string>
+    <string name="error_user">Usuário não Existe</string>
+    <string name="error_invalid">Usuário ou senha inválido</string>
+    <string name="error_field_required">Campo Obrigatório</string>
+    <string name="logado">Logado com Sucesso</string>
+
+    <string name="insert_sucess">Criado com Sucesso</string>
+    <string name="delete_sucess">Deletado com Sucesso</string>
+    <string name="change_sucess">Alterado com Sucesso</string>
+    <string name="error">Error</string>
+    <string name="error_campos">Preencher todos os campos</string>
+
+    <string name="find_all">Buscar Todos os Carros</string>
+    <string name="find_car">Editar Carro</string>
+    <string name="delete_car">Deletar Carro pela Placa</string>
+
+    <string name="informar_placa">Informar a Placa do Carro</string>
+
+    <string name="error_car">Carro Inexistente</string>
+    <string name="new_car">Novo Carro</string>
+    <string name="placa">Placa</string>
+    <string name="marca">Marca</string>
+    <string name="modelo">Modelo</string>
+    <string name="ano">Ano</string>
+    <string name="cor">Cor</string>
+
+    <string name="placa_list">Placa: </string>
+    <string name="marca_list">Marca: </string>
+    <string name="modelo_list">Modelo: </string>
+    <string name="ano_list">Ano: </string>
+    <string name="cor_list">Cor: </string>
+
+    <string name="loading">Carregando ...</string>
+
+    <string name="mail">E-mail</string>
+    <string name="name">Nome Completo</string>
+
+    <string name="desenvolvido">Desenvolvido por Mateus Santos</string>
+    <string name="versao">Versão 1.0</string>
+
+
 </resources>

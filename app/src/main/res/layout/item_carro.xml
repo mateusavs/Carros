@@ -11,31 +11,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvPlaca"
-        tools:text="Placa:  "/>
+        android:text="@string/placa_list"/>
     <TextView
         android:textColor="#000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvMarca"
-        tools:text="Marca:  "/>
+        android:text="@string/marca_list"/>
     <TextView
         android:textColor="#000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvModelo"
-        tools:text="Modelo:  "/>
+        android:text="@string/modelo_list"/>
     <TextView
         android:textColor="#000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvAno"
-        tools:text="Ano:  "/>
+        android:text="@string/ano_list"
+        />
     <TextView
         android:textColor="#000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvCor"
-        tools:text="Cor:  "/>
+        tools:text="@string/cor_list"/>
     <TextView
         android:textColor="#000"
         android:layout_width="match_parent"

@@ -16,12 +16,12 @@
         android:textSize="30sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ERRRRRROOOU"/>
+        android:text="@string/error"/>
     <TextView
         android:id="@+id/tvMensagemErro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Erro"/>
+        android:text="@string/error"/>
 
 
 </LinearLayout>

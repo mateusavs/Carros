@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
-        android:text="Pleasy, Inform Car Plate"
+        android:text="@string/informar_placa"
         android:textSize="25sp"
         android:textStyle="bold|italic" />
 
@@ -18,7 +18,7 @@
         android:layout_width="187dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:hint="Car Plate"
+        android:hint="@string/placa"
         android:maxLines="1"/>
 
         <android.support.design.widget.FloatingActionButton

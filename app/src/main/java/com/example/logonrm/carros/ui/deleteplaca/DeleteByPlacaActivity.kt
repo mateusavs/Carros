@@ -21,20 +21,32 @@ class DeleteByPlacaActivity : AppCompatActivity() {
     }
 
     fun deletar() {
-        val api = RetrofitClient.getInstance().create(CarroAPI::class.java)
-        api.deletar(placaCar.text.toString().toUpperCase()).enqueue(object : Callback<Void> {
-            override fun onResponse(call: Call<Void>?, response: Response<Void>?) {
-                if (response?.isSuccessful == true) {
-                    Toast.makeText(applicationContext, "Deleted Successfully", Toast.LENGTH_SHORT).show()
-                    finish()
-                } else {
-                    Toast.makeText(applicationContext, "Erro", Toast.LENGTH_SHORT).show()
-                }
-            }
 
-            override fun onFailure(call: Call<Void>?, t: Throwable?) {
-                Log.e("CARRO", t?.message)
-            }
-        })
+        var cancel =  false
+
+        var placa = placaCar.text.toString().toUpperCase()
+
+        if (placa == null || placa  == ""){
+            cancel = true
+            placaCar.error = getString(R.string.error_field_required)
+        }
+        if (cancel == false) {
+            val api = RetrofitClient.getInstance().create(CarroAPI::class.java)
+            api.deletar(placaCar.text.toString().toUpperCase()).enqueue(object : Callback<Void> {
+                override fun onResponse(call: Call<Void>?, response: Response<Void>?) {
+                    if (response?.isSuccessful == true) {
+
+                        Toast.makeText(applicationContext, getString(R.string.delete_sucess), Toast.LENGTH_SHORT).show()
+                        finish()
+                    } else {
+                        Toast.makeText(applicationContext, "Erro", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<Void>?, t: Throwable?) {
+                    Log.e("CARRO", t?.message)
+                }
+            })
+        }
     }
 }

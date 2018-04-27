@@ -25,26 +25,34 @@ class FindByPlacaActivity : AppCompatActivity() {
 
     fun setPlaca() {
 
+        var cancel =  false
+
         var placa = tvPlacaCar.text.toString().toUpperCase()
 
-        val api = RetrofitClient.getInstance().create(CarroAPI::class.java)
-        api.buscarbyPlaca(placa).enqueue(object : Callback<Carro> {
+        if (placa == null || placa  == ""){
+            cancel = true
+            tvPlacaCar.error = getString(R.string.error_field_required)
+        }
+        if (cancel == false) {
+            val api = RetrofitClient.getInstance().create(CarroAPI::class.java)
+            api.buscarbyPlaca(placa).enqueue(object : Callback<Carro> {
 
-            override fun onResponse(call: Call<Carro>?,
-                                    response: Response<Carro>?) {
-                if (response?.isSuccessful == true) {
-                    setupLista(response?.body()!!)
-                } else {
-                    Toast.makeText(applicationContext, "Not Exist car With Plate", Toast.LENGTH_SHORT).show()
+                override fun onResponse(call: Call<Carro>?,
+                                        response: Response<Carro>?) {
+                    if (response?.isSuccessful == true) {
+                        setupLista(response?.body()!!)
+                    } else {
+                        Toast.makeText(applicationContext, getString(R.string.error_car), Toast.LENGTH_SHORT).show()
+                    }
                 }
-            }
 
-            override fun onFailure(call: Call<Carro>?, t: Throwable?) {
-                Toast.makeText(applicationContext, "Erro", Toast.LENGTH_SHORT).show()
-            }
+                override fun onFailure(call: Call<Carro>?, t: Throwable?) {
+                    Toast.makeText(applicationContext, getString(R.string.error), Toast.LENGTH_SHORT).show()
+                }
 
 
-        })
+            })
+        }
     }
 
     fun setupLista(carro: Carro){
