@@ -30,7 +30,7 @@
     <string name="error_campos">Preencher todos os campos</string>
 
     <string name="find_all">Buscar Todos os Carros</string>
-    <string name="find_car">Editar Carro</string>
+    <string name="find_car">Buscar Carro por Placa</string>
     <string name="delete_car">Deletar Carro pela Placa</string>
 
     <string name="informar_placa">Informar a Placa do Carro</string>
